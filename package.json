@@ -1,0 +1,32 @@
+{
+  "name": "react-todoapp",
+  "version": "1.0.0",
+  "description": "Todo App based on scrimba React tutorial",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maksympc/react-todoapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maksympc/react-todoapp/issues"
+  },
+  "homepage": "https://github.com/maksympc/react-todoapp#readme",
+  "dependencies": {
+    "react": "16.4.0",
+    "react-dom": "16.4.0"
+  },
+  "devDependencies": {
+    "webpack": "^2.0",
+    "babel-core": "^6.0",
+    "babel-loader": "^7.0",
+    "babel-preset-env": "*",
+    "babel-preset-react": "*"
+  }
+}
