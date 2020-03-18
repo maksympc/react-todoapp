@@ -931,24 +931,44 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// JSX
-_reactDom2.default.render(_react2.default.createElement(
-  "div",
-  null,
-  _react2.default.createElement(
-    "h1",
-    null,
-    "Hello world!"
-  ),
-  _react2.default.createElement(
-    "p",
-    null,
-    "This is a paragraph"
-  )
-), document.getElementById("root"));
+function MyInfo() {
+  return _react2.default.createElement(
+    "div",
+    { style: { background: '#3399ff', padding: '20px', color: 'white' } },
+    _react2.default.createElement(
+      "h1",
+      null,
+      "Maksym Pinchuk"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "I'm a software engineer, I like playing the guitar and doing sport exersices"
+    ),
+    _react2.default.createElement(
+      "ol",
+      { style: { background: '#4da6ff', padding: '20px', color: '#e6f3ff' } },
+      _react2.default.createElement(
+        "li",
+        null,
+        "Thailand"
+      ),
+      _react2.default.createElement(
+        "li",
+        null,
+        "Amsterdam"
+      ),
+      _react2.default.createElement(
+        "li",
+        null,
+        "Faroe Island"
+      )
+    )
+  );
+}
 
-var myNewP = document.createElement("p");
-myNewP.innerHTML = "This is a paragraph.";
+// JSX
+_reactDom2.default.render(_react2.default.createElement(MyInfo, null), document.getElementById("root"));
 
 /***/ }),
 /* 14 */
