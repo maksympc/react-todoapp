@@ -1,4 +1,4 @@
-# React TODO APp
+# React TODO APP
 
 Quick start:
 
