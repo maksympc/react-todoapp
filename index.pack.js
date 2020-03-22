@@ -869,7 +869,48 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 12 */,
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _MyInfo = __webpack_require__(27);
+
+var _MyInfo2 = _interopRequireDefault(_MyInfo);
+
+var _Footer = __webpack_require__(26);
+
+var _Footer2 = _interopRequireDefault(_Footer);
+
+var _Navbar = __webpack_require__(28);
+
+var _Navbar2 = _interopRequireDefault(_Navbar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function App() {
+
+  return _react2.default.createElement(
+    "div",
+    null,
+    _react2.default.createElement(_Navbar2.default, null),
+    _react2.default.createElement(_MyInfo2.default, null),
+    _react2.default.createElement(_Footer2.default, null)
+  );
+}
+
+exports.default = App;
+
+/***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -930,14 +971,13 @@ var _reactDom = __webpack_require__(13);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _MyInfo = __webpack_require__(26);
+var _App = __webpack_require__(12);
 
-var _MyInfo2 = _interopRequireDefault(_MyInfo);
+var _App2 = _interopRequireDefault(_App);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// JSX
-_reactDom2.default.render(_react2.default.createElement(_MyInfo2.default, null), document.getElementById("root"));
+_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById("root"));
 
 /***/ }),
 /* 15 */
@@ -20250,6 +20290,37 @@ assign:k}},Y={default:X},Z=Y&&X||Y;module.exports=Z.default?Z.default:Z;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Footer() {
+  return _react2.default.createElement(
+    'footer',
+    { style: { background: '#ddd' } },
+    _react2.default.createElement(
+      'h3',
+      null,
+      'It\'s a footer!'
+    )
+  );
+}
+
+exports.default = Footer;
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.default = MyInfo;
 
 var _react = __webpack_require__(2);
@@ -20260,7 +20331,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function MyInfo() {
   return _react2.default.createElement(
-    'div',
+    'main',
     { style: { background: '#3399ff', padding: '20px', color: 'white' } },
     _react2.default.createElement(
       'h1',
@@ -20293,6 +20364,64 @@ function MyInfo() {
     )
   );
 }
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Navbar() {
+
+  return _react2.default.createElement(
+    'nav',
+    { style: { padding: '14px 0', background: '#ddd' } },
+    _react2.default.createElement(
+      'ul',
+      { style: { margin: 0, padding: 0, display: 'flex', listStyle: 'none', '*': 'pad', flexDimension: '1' } },
+      _react2.default.createElement(
+        'li',
+        { style: { marginRight: '20px' } },
+        _react2.default.createElement(
+          'a',
+          { href: '#' },
+          'link 1'
+        )
+      ),
+      _react2.default.createElement(
+        'li',
+        { style: { marginRight: '20px' } },
+        _react2.default.createElement(
+          'a',
+          { href: '#' },
+          'link 2'
+        )
+      ),
+      _react2.default.createElement(
+        'li',
+        null,
+        _react2.default.createElement(
+          'a',
+          { href: '#' },
+          'link 3'
+        )
+      )
+    )
+  );
+}
+
+exports.default = Navbar;
 
 /***/ })
 /******/ ]);
