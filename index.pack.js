@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 15);
+/******/ 	return __webpack_require__(__webpack_require__.s = 16);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -264,9 +264,9 @@ process.umask = function() { return 0; };
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(26);
+  module.exports = __webpack_require__(27);
 } else {
-  module.exports = __webpack_require__(25);
+  module.exports = __webpack_require__(26);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -549,7 +549,7 @@ module.exports = ExecutionEnvironment;
  * 
  */
 
-var isTextNode = __webpack_require__(21);
+var isTextNode = __webpack_require__(22);
 
 /*eslint-disable no-bitwise */
 
@@ -775,7 +775,7 @@ module.exports = warning;
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(22);
+  var ReactPropTypesSecret = __webpack_require__(23);
   var loggedTypeFailures = {};
   var has = Function.call.bind(Object.prototype.hasOwnProperty);
 
@@ -887,46 +887,24 @@ var _Header = __webpack_require__(14);
 
 var _Header2 = _interopRequireDefault(_Header);
 
+var _TodoItem = __webpack_require__(15);
+
+var _TodoItem2 = _interopRequireDefault(_TodoItem);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
 
   return _react2.default.createElement(
     'div',
-    null,
+    { style: { paddingTop: '46px' } },
     _react2.default.createElement(_Header2.default, null),
     _react2.default.createElement(
       'div',
-      { style: { display: 'flex' } },
-      _react2.default.createElement('input', { type: 'checkbox' }),
-      ' ',
-      _react2.default.createElement(
-        'p',
-        { style: { margin: '0 0 0 10px', padding: '0' } },
-        'First item'
-      )
-    ),
-    _react2.default.createElement(
-      'div',
-      { style: { display: 'flex' } },
-      _react2.default.createElement('input', { type: 'checkbox' }),
-      ' ',
-      _react2.default.createElement(
-        'p',
-        { style: { margin: '0 0 0 10px', padding: '0' } },
-        'Second item'
-      )
-    ),
-    _react2.default.createElement(
-      'div',
-      { style: { display: 'flex' } },
-      _react2.default.createElement('input', { type: 'checkbox' }),
-      ' ',
-      _react2.default.createElement(
-        'p',
-        { style: { margin: '0 0 0 10px', padding: '0' } },
-        'Third item'
-      )
+      { style: { padding: '20px 20px', border: '3px solid #333' } },
+      _react2.default.createElement(_TodoItem2.default, { text: 'First item' }),
+      _react2.default.createElement(_TodoItem2.default, { text: 'Second item' }),
+      _react2.default.createElement(_TodoItem2.default, { text: 'Third item' })
     )
   );
 }
@@ -972,9 +950,9 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(24);
+  module.exports = __webpack_require__(25);
 } else {
-  module.exports = __webpack_require__(23);
+  module.exports = __webpack_require__(24);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -999,37 +977,33 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function Header() {
 
   return _react2.default.createElement(
-    'header',
-    { className: 'navbar' },
+    'ul',
+    null,
     _react2.default.createElement(
-      'ul',
-      { style: { margin: 0, padding: 0, display: 'flex', listStyle: 'none', '*': 'pad', flexDimension: '1' } },
+      'li',
+      null,
       _react2.default.createElement(
-        'li',
-        { style: { marginRight: '20px' } },
-        _react2.default.createElement(
-          'a',
-          { href: '#' },
-          'link 1'
-        )
-      ),
+        'a',
+        { 'class': 'active', href: '#' },
+        'Home'
+      )
+    ),
+    _react2.default.createElement(
+      'li',
+      null,
       _react2.default.createElement(
-        'li',
-        { style: { marginRight: '20px' } },
-        _react2.default.createElement(
-          'a',
-          { href: '#' },
-          'link 2'
-        )
-      ),
+        'a',
+        { href: '#' },
+        'Contact'
+      )
+    ),
+    _react2.default.createElement(
+      'li',
+      null,
       _react2.default.createElement(
-        'li',
-        null,
-        _react2.default.createElement(
-          'a',
-          { href: '#' },
-          'link 3'
-        )
+        'a',
+        { href: '#' },
+        'About'
       )
     )
   );
@@ -1039,6 +1013,36 @@ exports.default = Header;
 
 /***/ }),
 /* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function TodoItem(props) {
+
+  return _react2.default.createElement(
+    "label",
+    { className: "container" },
+    props.text,
+    _react2.default.createElement("input", { type: "checkbox" }),
+    _react2.default.createElement("span", { className: "checkmark" })
+  );
+}
+
+exports.default = TodoItem;
+
+/***/ }),
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1061,7 +1065,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1096,7 +1100,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1111,7 +1115,7 @@ module.exports = camelize;
 
 
 
-var camelize = __webpack_require__(16);
+var camelize = __webpack_require__(17);
 
 var msPattern = /^-ms-/;
 
@@ -1139,7 +1143,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1175,7 +1179,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1190,7 +1194,7 @@ module.exports = hyphenate;
 
 
 
-var hyphenate = __webpack_require__(18);
+var hyphenate = __webpack_require__(19);
 
 var msPattern = /^ms-/;
 
@@ -1217,7 +1221,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1245,7 +1249,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1260,7 +1264,7 @@ module.exports = isNode;
  * @typechecks
  */
 
-var isNode = __webpack_require__(20);
+var isNode = __webpack_require__(21);
 
 /**
  * @param {*} object The object to check.
@@ -1273,7 +1277,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1292,7 +1296,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1324,8 +1328,8 @@ var getActiveElement = __webpack_require__(8);
 var shallowEqual = __webpack_require__(9);
 var containsNode = __webpack_require__(7);
 var emptyObject = __webpack_require__(3);
-var hyphenateStyleName = __webpack_require__(19);
-var camelizeStyleName = __webpack_require__(17);
+var hyphenateStyleName = __webpack_require__(20);
+var camelizeStyleName = __webpack_require__(18);
 
 // Relying on the `invariant()` implementation lets us
 // have preserve the format and params in the www builds.
@@ -18606,7 +18610,7 @@ module.exports = reactDom;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18851,7 +18855,7 @@ var vi={default:qi},wi=vi&&qi||vi;module.exports=wi.default?wi.default:wi;
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20333,7 +20337,7 @@ module.exports = react;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
