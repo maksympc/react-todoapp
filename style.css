@@ -100,3 +100,7 @@ li a:hover:not(.active) {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.contacts {
+  display: flex;
+}

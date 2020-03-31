@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 16);
+/******/ 	return __webpack_require__(__webpack_require__.s = 15);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -264,9 +264,9 @@ process.umask = function() { return 0; };
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(27);
-} else {
   module.exports = __webpack_require__(26);
+} else {
+  module.exports = __webpack_require__(25);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -549,7 +549,7 @@ module.exports = ExecutionEnvironment;
  * 
  */
 
-var isTextNode = __webpack_require__(22);
+var isTextNode = __webpack_require__(21);
 
 /*eslint-disable no-bitwise */
 
@@ -775,7 +775,7 @@ module.exports = warning;
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(23);
+  var ReactPropTypesSecret = __webpack_require__(22);
   var loggedTypeFailures = {};
   var has = Function.call.bind(Object.prototype.hasOwnProperty);
 
@@ -883,32 +883,36 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Header = __webpack_require__(14);
+var _ContactCard = __webpack_require__(14);
 
-var _Header2 = _interopRequireDefault(_Header);
-
-var _TodoItem = __webpack_require__(15);
-
-var _TodoItem2 = _interopRequireDefault(_TodoItem);
+var _ContactCard2 = _interopRequireDefault(_ContactCard);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
 
+  // return (
+  //   <div style={{paddingTop:'46px'}}>
+  //     <Header/>
+  //     <div style={{padding: '20px 20px', border:'3px solid #333'}}>
+  //       <TodoItem text="First item"/>
+  //       <TodoItem text="Second item"/>
+  //       <TodoItem text="Third item"/>
+  //     </div>
+  //   </div>
+  // )
+
   return _react2.default.createElement(
     'div',
-    { style: { paddingTop: '46px' } },
-    _react2.default.createElement(_Header2.default, null),
-    _react2.default.createElement(
-      'div',
-      { style: { padding: '20px 20px', border: '3px solid #333' } },
-      _react2.default.createElement(_TodoItem2.default, { text: 'First item' }),
-      _react2.default.createElement(_TodoItem2.default, { text: 'Second item' }),
-      _react2.default.createElement(_TodoItem2.default, { text: 'Third item' })
-    )
+    { className: 'contacts' },
+    _react2.default.createElement(_ContactCard2.default, { name: 'Mr. Whiskerson', imgUrl: 'http://placekitten.com/300/200', phone: '(212) 555-1234', email: 'mr.whiskaz@catnap.meow' }),
+    _react2.default.createElement(_ContactCard2.default, { name: 'Fluffykins', imgUrl: 'http://placekitten.com/400/350', phone: '(212) 555-2345', email: 'fluff@me.com' }),
+    _react2.default.createElement(_ContactCard2.default, { name: 'Destroyer', imgUrl: 'http://placekitten.com/400/300', phone: '(212) 555-4567', email: 'thecat@hotmail.com' }),
+    _react2.default.createElement(_ContactCard2.default, { name: 'Felix', imgUrl: 'http://placekitten.com/250/150', phone: '(212) 555-1234', email: 'ofworlds@yahoo.com' })
   );
 }
-
+// import Header from './Header';
+// import TodoItem from "./TodoItem";
 exports.default = App;
 
 /***/ }),
@@ -950,9 +954,9 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(25);
-} else {
   module.exports = __webpack_require__(24);
+} else {
+  module.exports = __webpack_require__(23);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -974,75 +978,35 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Header() {
-
+function ContactCard(props) {
   return _react2.default.createElement(
-    'ul',
-    null,
+    "div",
+    { className: "contact-card" },
+    _react2.default.createElement("img", { src: props.imgUrl }),
     _react2.default.createElement(
-      'li',
+      "h3",
       null,
-      _react2.default.createElement(
-        'a',
-        { 'class': 'active', href: '#' },
-        'Home'
-      )
+      props.name
     ),
     _react2.default.createElement(
-      'li',
+      "p",
       null,
-      _react2.default.createElement(
-        'a',
-        { href: '#' },
-        'Contact'
-      )
+      "Phone: ",
+      props.phone
     ),
     _react2.default.createElement(
-      'li',
+      "p",
       null,
-      _react2.default.createElement(
-        'a',
-        { href: '#' },
-        'About'
-      )
+      "Email: ",
+      props.email
     )
   );
 }
 
-exports.default = Header;
+exports.default = ContactCard;
 
 /***/ }),
 /* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function TodoItem(props) {
-
-  return _react2.default.createElement(
-    "label",
-    { className: "container" },
-    props.text,
-    _react2.default.createElement("input", { type: "checkbox" }),
-    _react2.default.createElement("span", { className: "checkmark" })
-  );
-}
-
-exports.default = TodoItem;
-
-/***/ }),
-/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1065,7 +1029,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1100,7 +1064,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1115,7 +1079,7 @@ module.exports = camelize;
 
 
 
-var camelize = __webpack_require__(17);
+var camelize = __webpack_require__(16);
 
 var msPattern = /^-ms-/;
 
@@ -1143,7 +1107,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1179,7 +1143,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1194,7 +1158,7 @@ module.exports = hyphenate;
 
 
 
-var hyphenate = __webpack_require__(19);
+var hyphenate = __webpack_require__(18);
 
 var msPattern = /^ms-/;
 
@@ -1221,7 +1185,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1249,7 +1213,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1264,7 +1228,7 @@ module.exports = isNode;
  * @typechecks
  */
 
-var isNode = __webpack_require__(21);
+var isNode = __webpack_require__(20);
 
 /**
  * @param {*} object The object to check.
@@ -1277,7 +1241,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1296,7 +1260,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1328,8 +1292,8 @@ var getActiveElement = __webpack_require__(8);
 var shallowEqual = __webpack_require__(9);
 var containsNode = __webpack_require__(7);
 var emptyObject = __webpack_require__(3);
-var hyphenateStyleName = __webpack_require__(20);
-var camelizeStyleName = __webpack_require__(18);
+var hyphenateStyleName = __webpack_require__(19);
+var camelizeStyleName = __webpack_require__(17);
 
 // Relying on the `invariant()` implementation lets us
 // have preserve the format and params in the www builds.
@@ -18610,7 +18574,7 @@ module.exports = reactDom;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18855,7 +18819,7 @@ var vi={default:qi},wi=vi&&qi||vi;module.exports=wi.default?wi.default:wi;
 
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20337,7 +20301,7 @@ module.exports = react;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
