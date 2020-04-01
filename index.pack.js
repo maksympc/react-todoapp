@@ -905,10 +905,30 @@ function App() {
   return _react2.default.createElement(
     'div',
     { className: 'contacts' },
-    _react2.default.createElement(_ContactCard2.default, { name: 'Mr. Whiskerson', imgUrl: 'http://placekitten.com/300/200', phone: '(212) 555-1234', email: 'mr.whiskaz@catnap.meow' }),
-    _react2.default.createElement(_ContactCard2.default, { name: 'Fluffykins', imgUrl: 'http://placekitten.com/400/350', phone: '(212) 555-2345', email: 'fluff@me.com' }),
-    _react2.default.createElement(_ContactCard2.default, { name: 'Destroyer', imgUrl: 'http://placekitten.com/400/300', phone: '(212) 555-4567', email: 'thecat@hotmail.com' }),
-    _react2.default.createElement(_ContactCard2.default, { name: 'Felix', imgUrl: 'http://placekitten.com/250/150', phone: '(212) 555-1234', email: 'ofworlds@yahoo.com' })
+    _react2.default.createElement(_ContactCard2.default, { contact: {
+        name: "Mr. Whiskerson",
+        imgUrl: "http://placekitten.com/300/200",
+        phone: "(212) 555-1234",
+        email: "mr.whiskaz@catnap.meow"
+      } }),
+    _react2.default.createElement(_ContactCard2.default, { contact: {
+        name: "Fluffykins",
+        imgUrl: "http://placekitten.com/400/350",
+        phone: "(212) 555-2345",
+        email: "fluff@me.com"
+      } }),
+    _react2.default.createElement(_ContactCard2.default, { contact: {
+        name: "Destroyer",
+        imgUrl: "http://placekitten.com/400/300",
+        phone: "(212) 555-4567",
+        email: "thecat@hotmail.com"
+      } }),
+    _react2.default.createElement(_ContactCard2.default, { contact: {
+        name: "Felix",
+        imgUrl: "http://placekitten.com/250/150",
+        phone: "(212) 555-1234",
+        email: "ofworlds@yahoo.com"
+      } })
   );
 }
 // import Header from './Header';
@@ -982,23 +1002,23 @@ function ContactCard(props) {
   return _react2.default.createElement(
     "div",
     { className: "contact-card" },
-    _react2.default.createElement("img", { src: props.imgUrl }),
+    _react2.default.createElement("img", { src: props.contact.imgUrl }),
     _react2.default.createElement(
       "h3",
       null,
-      props.name
+      props.contact.name
     ),
     _react2.default.createElement(
       "p",
       null,
       "Phone: ",
-      props.phone
+      props.contact.phone
     ),
     _react2.default.createElement(
       "p",
       null,
       "Email: ",
-      props.email
+      props.contact.email
     )
   );
 }
