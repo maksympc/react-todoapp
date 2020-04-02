@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 15);
+/******/ 	return __webpack_require__(__webpack_require__.s = 16);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -264,9 +264,9 @@ process.umask = function() { return 0; };
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(26);
+  module.exports = __webpack_require__(27);
 } else {
-  module.exports = __webpack_require__(25);
+  module.exports = __webpack_require__(26);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -549,7 +549,7 @@ module.exports = ExecutionEnvironment;
  * 
  */
 
-var isTextNode = __webpack_require__(21);
+var isTextNode = __webpack_require__(22);
 
 /*eslint-disable no-bitwise */
 
@@ -775,7 +775,7 @@ module.exports = warning;
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(22);
+  var ReactPropTypesSecret = __webpack_require__(23);
   var loggedTypeFailures = {};
   var has = Function.call.bind(Object.prototype.hasOwnProperty);
 
@@ -887,8 +887,15 @@ var _Joke = __webpack_require__(14);
 
 var _Joke2 = _interopRequireDefault(_Joke);
 
+var _jokeData = __webpack_require__(15);
+
+var _jokeData2 = _interopRequireDefault(_jokeData);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import Header from './Header';
+// import TodoItem from "./TodoItem";
+// import ContactCard from './ContactCard';
 function App() {
 
   // TodoList
@@ -934,34 +941,18 @@ function App() {
   // )
 
   // Jokes
-
-  var data = [{
-    question: 'My old aunts would come and tease me at weddings, “Well Sarah? Do you think you’ll be next?”',
-    punchLine: 'We’ve settled this quickly once I’ve started doing the same to them at funerals.'
-  }, {
-    question: 'Job interviewer: “And where would you see yourself in five years’ time Mr. Jeffries?"',
-    punchLine: 'Mr. Jeffries: "Personally I believe my biggest weakness is in listening."'
-  }, {
-    question: 'Guest to the waiter: “Can you bring me what the lady at the next table is having?”',
-    punchLine: 'Waiter: “Sorry, sir, but I’m pretty sure she wants to eat it herself.”'
-  }, {
-    question: 'A mother asks her son: "Anton, do you think I’m a bad mom?"',
-    punchLine: 'Son: "My name is Paul."'
-  }, {
-    punchLine: 'One of the most wonderful things in life is to wake up and enjoy a cuddle with somebody; unless you are in prison.'
-  }];
-
+  var jokeComponents = _jokeData2.default.filter(function (item) {
+    return item.question;
+  }).map(function (item, index) {
+    return _react2.default.createElement(_Joke2.default, { key: index, question: item.question, punchLine: item.punchLine });
+  });
   return _react2.default.createElement(
     'div',
     { style: { display: 'flex', flexWrap: 'wrap' } },
-    data.map(function (item) {
-      return _react2.default.createElement(_Joke2.default, { question: item.question, punchLine: item.punchLine });
-    })
+    jokeComponents
   );
 }
-// import Header from './Header';
-// import TodoItem from "./TodoItem";
-// import ContactCard from './ContactCard';
+
 exports.default = App;
 
 /***/ }),
@@ -1003,9 +994,9 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(24);
+  module.exports = __webpack_require__(25);
 } else {
-  module.exports = __webpack_require__(23);
+  module.exports = __webpack_require__(24);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -1056,6 +1047,32 @@ exports.default = Joke;
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = [{
+  question: 'My old aunts would come and tease me at weddings, “Well Sarah? Do you think you’ll be next?”',
+  punchLine: 'We’ve settled this quickly once I’ve started doing the same to them at funerals.'
+}, {
+  question: 'Job interviewer: “And where would you see yourself in five years’ time Mr. Jeffries?"',
+  punchLine: 'Mr. Jeffries: "Personally I believe my biggest weakness is in listening."'
+}, {
+  question: 'Guest to the waiter: “Can you bring me what the lady at the next table is having?”',
+  punchLine: 'Waiter: “Sorry, sir, but I’m pretty sure she wants to eat it herself.”'
+}, {
+  question: 'A mother asks her son: "Anton, do you think I’m a bad mom?"',
+  punchLine: 'Son: "My name is Paul."'
+}, {
+  punchLine: 'One of the most wonderful things in life is to wake up and enjoy a cuddle with somebody; unless you are in prison.'
+}];
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
@@ -1073,7 +1090,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1108,7 +1125,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1123,7 +1140,7 @@ module.exports = camelize;
 
 
 
-var camelize = __webpack_require__(16);
+var camelize = __webpack_require__(17);
 
 var msPattern = /^-ms-/;
 
@@ -1151,7 +1168,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1187,7 +1204,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1202,7 +1219,7 @@ module.exports = hyphenate;
 
 
 
-var hyphenate = __webpack_require__(18);
+var hyphenate = __webpack_require__(19);
 
 var msPattern = /^ms-/;
 
@@ -1229,7 +1246,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1257,7 +1274,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1272,7 +1289,7 @@ module.exports = isNode;
  * @typechecks
  */
 
-var isNode = __webpack_require__(20);
+var isNode = __webpack_require__(21);
 
 /**
  * @param {*} object The object to check.
@@ -1285,7 +1302,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1304,7 +1321,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1336,8 +1353,8 @@ var getActiveElement = __webpack_require__(8);
 var shallowEqual = __webpack_require__(9);
 var containsNode = __webpack_require__(7);
 var emptyObject = __webpack_require__(3);
-var hyphenateStyleName = __webpack_require__(19);
-var camelizeStyleName = __webpack_require__(17);
+var hyphenateStyleName = __webpack_require__(20);
+var camelizeStyleName = __webpack_require__(18);
 
 // Relying on the `invariant()` implementation lets us
 // have preserve the format and params in the www builds.
@@ -18618,7 +18635,7 @@ module.exports = reactDom;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18863,7 +18880,7 @@ var vi={default:qi},wi=vi&&qi||vi;module.exports=wi.default?wi.default:wi;
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20345,7 +20362,7 @@ module.exports = react;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
