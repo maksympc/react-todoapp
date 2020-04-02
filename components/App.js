@@ -2,8 +2,11 @@ import React from 'react'
 // import Header from './Header';
 // import TodoItem from "./TodoItem";
 // import ContactCard from './ContactCard';
-import Joke from './Joke.js';
-import jokes from './jokeData';
+// import Joke from './Joke.js';
+// import jokes from '../data/jokes';
+import Product from './Product';
+import products from '../data/vsschoolProducts';
+
 function App() {
 
   // TodoList
@@ -49,11 +52,17 @@ function App() {
   // )
 
   // Jokes
-  const jokeComponents = jokes.filter(item => item.question).map((item, index) => <Joke key={index} question={item.question} punchLine={item.punchLine}/>);
-  return (<div style={{display: 'flex', flexWrap: 'wrap'}}>
-      {jokeComponents}
-    </div>);
+  // const jokeComponents = jokes.filter(item => item.question).map((item, index) => <Joke key={index} question={item.question} punchLine={item.punchLine}/>);
+  // return (<div style={{display: 'flex', flexWrap: 'wrap'}}>
+  //     {jokeComponents}
+  //   </div>);
 
+  const productComponents = products.map(item => <Product key={item.id} {...item} />);
+  return (
+    <div style={{display: 'flex', flexWrap: 'wrap'}}>
+    {productComponents}
+    </div>
+  )
 }
 
 export default App;

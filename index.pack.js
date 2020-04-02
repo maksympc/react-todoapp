@@ -879,23 +879,28 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+// import Header from './Header';
+// import TodoItem from "./TodoItem";
+// import ContactCard from './ContactCard';
+// import Joke from './Joke.js';
+// import jokes from '../data/jokes';
+
+
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Joke = __webpack_require__(14);
+var _Product = __webpack_require__(14);
 
-var _Joke2 = _interopRequireDefault(_Joke);
+var _Product2 = _interopRequireDefault(_Product);
 
-var _jokeData = __webpack_require__(15);
+var _vsschoolProducts = __webpack_require__(15);
 
-var _jokeData2 = _interopRequireDefault(_jokeData);
+var _vsschoolProducts2 = _interopRequireDefault(_vsschoolProducts);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import Header from './Header';
-// import TodoItem from "./TodoItem";
-// import ContactCard from './ContactCard';
 function App() {
 
   // TodoList
@@ -941,15 +946,18 @@ function App() {
   // )
 
   // Jokes
-  var jokeComponents = _jokeData2.default.filter(function (item) {
-    return item.question;
-  }).map(function (item, index) {
-    return _react2.default.createElement(_Joke2.default, { key: index, question: item.question, punchLine: item.punchLine });
+  // const jokeComponents = jokes.filter(item => item.question).map((item, index) => <Joke key={index} question={item.question} punchLine={item.punchLine}/>);
+  // return (<div style={{display: 'flex', flexWrap: 'wrap'}}>
+  //     {jokeComponents}
+  //   </div>);
+
+  var productComponents = _vsschoolProducts2.default.map(function (item) {
+    return _react2.default.createElement(_Product2.default, _extends({ key: item.id }, item));
   });
   return _react2.default.createElement(
     'div',
     { style: { display: 'flex', flexWrap: 'wrap' } },
-    jokeComponents
+    productComponents
   );
 }
 
@@ -1018,27 +1026,51 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Joke(props) {
-  var question = props.question,
-      punchLine = props.punchLine;
-
+function Product(props) {
   return _react2.default.createElement(
     'div',
-    { style: { border: '1px solid #eee', borderRadius: '5px', minHeight: '50px', background: 'lightyellow', width: '250px', padding: '5px', margin: '5px' } },
-    question && _react2.default.createElement(
+    { style: {
+        display: 'flex',
+        flexDirection: 'column',
+        margin: '10px',
+        padding: '10px',
+        background: '#f8f8f8',
+        border: '1px solid #ddd',
+        borderRadius: '5px',
+        width: '220px'
+      } },
+    _react2.default.createElement(
       'div',
-      { style: { fontStyle: 'italic' } },
-      question
+      { style: { display: 'flex', justifyContent: 'space-between' } },
+      _react2.default.createElement(
+        'p',
+        { style: { textDecoration: 'underline' } },
+        props.name
+      ),
+      _react2.default.createElement(
+        'p',
+        { style: { fontWeight: '600' } },
+        'Price: ',
+        props.price,
+        '$'
+      )
     ),
-    punchLine && _react2.default.createElement(
+    _react2.default.createElement('hr', null),
+    _react2.default.createElement(
       'div',
-      { style: { fontWeight: '600' } },
-      punchLine
+      { style: { color: '#333' } },
+      props.description
+    ),
+    _react2.default.createElement(
+      'button',
+      {
+        style: { cursor: 'pointer', minMarginTop: '5px', marginTop: 'auto', justifySelf: 'flex-end', background: 'linear-gradient(#eee, #00ff00)' } },
+      'Buy now!'
     )
   );
 }
 
-exports.default = Joke;
+exports.default = Product;
 
 /***/ }),
 /* 15 */
@@ -1050,21 +1082,49 @@ exports.default = Joke;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = [{
-  question: 'My old aunts would come and tease me at weddings, “Well Sarah? Do you think you’ll be next?”',
-  punchLine: 'We’ve settled this quickly once I’ve started doing the same to them at funerals.'
+var products = [{
+  id: "1",
+  name: "Pencil",
+  price: 1,
+  description: "Perfect for those who can't remember things! 5/5 Highly recommend."
 }, {
-  question: 'Job interviewer: “And where would you see yourself in five years’ time Mr. Jeffries?"',
-  punchLine: 'Mr. Jeffries: "Personally I believe my biggest weakness is in listening."'
+  id: "2",
+  name: "Housing",
+  price: 0,
+  description: "Housing provided for out-of-state students or those who can't commute"
 }, {
-  question: 'Guest to the waiter: “Can you bring me what the lady at the next table is having?”',
-  punchLine: 'Waiter: “Sorry, sir, but I’m pretty sure she wants to eat it herself.”'
+  id: "3",
+  name: "Computer Rental",
+  price: 300,
+  description: "Don't have a computer? No problem!"
 }, {
-  question: 'A mother asks her son: "Anton, do you think I’m a bad mom?"',
-  punchLine: 'Son: "My name is Paul."'
+  id: "4",
+  name: "Coffee",
+  price: 2,
+  description: "Wake up!"
 }, {
-  punchLine: 'One of the most wonderful things in life is to wake up and enjoy a cuddle with somebody; unless you are in prison.'
+  id: "5",
+  name: "Snacks",
+  price: 0,
+  description: "Free snacks!"
+}, {
+  id: "6",
+  name: "Rubber Duckies",
+  price: 3.50,
+  description: "To help you solve your hardest coding problems."
+}, {
+  id: "7",
+  name: "Fidget Spinner",
+  price: 21.99,
+  description: "Because we like to pretend we're in high school."
+}, {
+  id: "8",
+  name: "Sticker Set",
+  price: 14.99,
+  description: "To prove to other devs you know a lot."
 }];
+
+exports.default = products;
 
 /***/ }),
 /* 16 */
