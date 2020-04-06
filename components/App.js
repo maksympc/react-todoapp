@@ -1,25 +1,24 @@
 import React from 'react'
-// import Header from './Header';
-// import TodoItem from "./TodoItem";
+import Header from './Header';
+import TodoItem from "./TodoItem";
 // import ContactCard from './ContactCard';
 // import Joke from './Joke.js';
 // import jokes from '../data/jokes';
-import Product from './Product';
-import products from '../data/vsschoolProducts';
+// import Product from './Product';
+// import products from '../data/vsschoolProducts';
+import todosData from '../data/todosData';
 
 function App() {
-
+  const todos = todosData.map(item => <TodoItem key={item.id} {...item}/>);
   // TodoList
-  // return (
-  //   <div style={{paddingTop:'46px'}}>
-  //     <Header/>
-  //     <div style={{padding: '20px 20px', border:'3px solid #333'}}>
-  //       <TodoItem text="First item"/>
-  //       <TodoItem text="Second item"/>
-  //       <TodoItem text="Third item"/>
-  //     </div>
-  //   </div>
-  // )
+  return (
+    <div style={{paddingTop: '46px'}}>
+      <Header/>
+      <div style={{padding: '20px 20px', border: '3px solid #333'}}>
+        {todos}
+      </div>
+    </div>
+  )
 
   // ContactCards
   // return (
@@ -56,13 +55,12 @@ function App() {
   // return (<div style={{display: 'flex', flexWrap: 'wrap'}}>
   //     {jokeComponents}
   //   </div>);
-
-  const productComponents = products.map(item => <Product key={item.id} {...item} />);
-  return (
-    <div style={{display: 'flex', flexWrap: 'wrap'}}>
-    {productComponents}
-    </div>
-  )
+  // const productComponents = products.map(item => <Product key={item.id} {...item} />);
+  // return (
+  //   <div style={{display: 'flex', flexWrap: 'wrap'}}>
+  //   {productComponents}
+  //   </div>
+  // )
 }
 
 export default App;

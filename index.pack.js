@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 16);
+/******/ 	return __webpack_require__(__webpack_require__.s = 17);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -264,9 +264,9 @@ process.umask = function() { return 0; };
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(27);
+  module.exports = __webpack_require__(28);
 } else {
-  module.exports = __webpack_require__(26);
+  module.exports = __webpack_require__(27);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -549,7 +549,7 @@ module.exports = ExecutionEnvironment;
  * 
  */
 
-var isTextNode = __webpack_require__(22);
+var isTextNode = __webpack_require__(23);
 
 /*eslint-disable no-bitwise */
 
@@ -775,7 +775,7 @@ module.exports = warning;
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(23);
+  var ReactPropTypesSecret = __webpack_require__(24);
   var loggedTypeFailures = {};
   var has = Function.call.bind(Object.prototype.hasOwnProperty);
 
@@ -880,40 +880,46 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-// import Header from './Header';
-// import TodoItem from "./TodoItem";
 // import ContactCard from './ContactCard';
 // import Joke from './Joke.js';
 // import jokes from '../data/jokes';
+// import Product from './Product';
+// import products from '../data/vsschoolProducts';
 
 
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Product = __webpack_require__(14);
+var _Header = __webpack_require__(14);
 
-var _Product2 = _interopRequireDefault(_Product);
+var _Header2 = _interopRequireDefault(_Header);
 
-var _vsschoolProducts = __webpack_require__(15);
+var _TodoItem = __webpack_require__(15);
 
-var _vsschoolProducts2 = _interopRequireDefault(_vsschoolProducts);
+var _TodoItem2 = _interopRequireDefault(_TodoItem);
+
+var _todosData = __webpack_require__(16);
+
+var _todosData2 = _interopRequireDefault(_todosData);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-
+  var todos = _todosData2.default.map(function (item) {
+    return _react2.default.createElement(_TodoItem2.default, _extends({ key: item.id }, item));
+  });
   // TodoList
-  // return (
-  //   <div style={{paddingTop:'46px'}}>
-  //     <Header/>
-  //     <div style={{padding: '20px 20px', border:'3px solid #333'}}>
-  //       <TodoItem text="First item"/>
-  //       <TodoItem text="Second item"/>
-  //       <TodoItem text="Third item"/>
-  //     </div>
-  //   </div>
-  // )
+  return _react2.default.createElement(
+    'div',
+    { style: { paddingTop: '46px' } },
+    _react2.default.createElement(_Header2.default, null),
+    _react2.default.createElement(
+      'div',
+      { style: { padding: '20px 20px', border: '3px solid #333' } },
+      todos
+    )
+  );
 
   // ContactCards
   // return (
@@ -950,15 +956,12 @@ function App() {
   // return (<div style={{display: 'flex', flexWrap: 'wrap'}}>
   //     {jokeComponents}
   //   </div>);
-
-  var productComponents = _vsschoolProducts2.default.map(function (item) {
-    return _react2.default.createElement(_Product2.default, _extends({ key: item.id }, item));
-  });
-  return _react2.default.createElement(
-    'div',
-    { style: { display: 'flex', flexWrap: 'wrap' } },
-    productComponents
-  );
+  // const productComponents = products.map(item => <Product key={item.id} {...item} />);
+  // return (
+  //   <div style={{display: 'flex', flexWrap: 'wrap'}}>
+  //   {productComponents}
+  //   </div>
+  // )
 }
 
 exports.default = App;
@@ -1002,9 +1005,9 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(25);
+  module.exports = __webpack_require__(26);
 } else {
-  module.exports = __webpack_require__(24);
+  module.exports = __webpack_require__(25);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -1026,51 +1029,42 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Product(props) {
+function Header() {
+
   return _react2.default.createElement(
-    'div',
-    { style: {
-        display: 'flex',
-        flexDirection: 'column',
-        margin: '10px',
-        padding: '10px',
-        background: '#f8f8f8',
-        border: '1px solid #ddd',
-        borderRadius: '5px',
-        width: '220px'
-      } },
+    'ul',
+    null,
     _react2.default.createElement(
-      'div',
-      { style: { display: 'flex', justifyContent: 'space-between' } },
+      'li',
+      null,
       _react2.default.createElement(
-        'p',
-        { style: { textDecoration: 'underline' } },
-        props.name
-      ),
-      _react2.default.createElement(
-        'p',
-        { style: { fontWeight: '600' } },
-        'Price: ',
-        props.price,
-        '$'
+        'a',
+        { 'class': 'active', href: '#' },
+        'Home'
       )
     ),
-    _react2.default.createElement('hr', null),
     _react2.default.createElement(
-      'div',
-      { style: { color: '#333' } },
-      props.description
+      'li',
+      null,
+      _react2.default.createElement(
+        'a',
+        { href: '#' },
+        'Contact'
+      )
     ),
     _react2.default.createElement(
-      'button',
-      {
-        style: { cursor: 'pointer', minMarginTop: '5px', marginTop: 'auto', justifySelf: 'flex-end', background: 'linear-gradient(#eee, #00ff00)' } },
-      'Buy now!'
+      'li',
+      null,
+      _react2.default.createElement(
+        'a',
+        { href: '#' },
+        'About'
+      )
     )
   );
 }
 
-exports.default = Product;
+exports.default = Header;
 
 /***/ }),
 /* 15 */
@@ -1082,52 +1076,62 @@ exports.default = Product;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var products = [{
-  id: "1",
-  name: "Pencil",
-  price: 1,
-  description: "Perfect for those who can't remember things! 5/5 Highly recommend."
-}, {
-  id: "2",
-  name: "Housing",
-  price: 0,
-  description: "Housing provided for out-of-state students or those who can't commute"
-}, {
-  id: "3",
-  name: "Computer Rental",
-  price: 300,
-  description: "Don't have a computer? No problem!"
-}, {
-  id: "4",
-  name: "Coffee",
-  price: 2,
-  description: "Wake up!"
-}, {
-  id: "5",
-  name: "Snacks",
-  price: 0,
-  description: "Free snacks!"
-}, {
-  id: "6",
-  name: "Rubber Duckies",
-  price: 3.50,
-  description: "To help you solve your hardest coding problems."
-}, {
-  id: "7",
-  name: "Fidget Spinner",
-  price: 21.99,
-  description: "Because we like to pretend we're in high school."
-}, {
-  id: "8",
-  name: "Sticker Set",
-  price: 14.99,
-  description: "To prove to other devs you know a lot."
-}];
 
-exports.default = products;
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function TodoItem(props) {
+
+  return _react2.default.createElement(
+    "label",
+    { className: "container" },
+    props.text,
+    _react2.default.createElement("input", { type: "checkbox", checked: props.completed }),
+    _react2.default.createElement("span", { className: "checkmark" })
+  );
+}
+
+exports.default = TodoItem;
 
 /***/ }),
 /* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var todosData = [{
+    id: 1,
+    text: "Take out the trash",
+    completed: true
+}, {
+    id: 2,
+    text: "Grocery shopping",
+    completed: false
+}, {
+    id: 3,
+    text: "Clean gecko tank",
+    completed: false
+}, {
+    id: 4,
+    text: "Mow lawn",
+    completed: true
+}, {
+    id: 5,
+    text: "Catch up on Arrested Development",
+    completed: false
+}];
+
+exports.default = todosData;
+
+/***/ }),
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1150,7 +1154,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1185,7 +1189,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1200,7 +1204,7 @@ module.exports = camelize;
 
 
 
-var camelize = __webpack_require__(17);
+var camelize = __webpack_require__(18);
 
 var msPattern = /^-ms-/;
 
@@ -1228,7 +1232,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1264,7 +1268,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1279,7 +1283,7 @@ module.exports = hyphenate;
 
 
 
-var hyphenate = __webpack_require__(19);
+var hyphenate = __webpack_require__(20);
 
 var msPattern = /^ms-/;
 
@@ -1306,7 +1310,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1334,7 +1338,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1349,7 +1353,7 @@ module.exports = isNode;
  * @typechecks
  */
 
-var isNode = __webpack_require__(21);
+var isNode = __webpack_require__(22);
 
 /**
  * @param {*} object The object to check.
@@ -1362,7 +1366,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1381,7 +1385,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1413,8 +1417,8 @@ var getActiveElement = __webpack_require__(8);
 var shallowEqual = __webpack_require__(9);
 var containsNode = __webpack_require__(7);
 var emptyObject = __webpack_require__(3);
-var hyphenateStyleName = __webpack_require__(20);
-var camelizeStyleName = __webpack_require__(18);
+var hyphenateStyleName = __webpack_require__(21);
+var camelizeStyleName = __webpack_require__(19);
 
 // Relying on the `invariant()` implementation lets us
 // have preserve the format and params in the www builds.
@@ -18695,7 +18699,7 @@ module.exports = reactDom;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18940,7 +18944,7 @@ var vi={default:qi},wi=vi&&qi||vi;module.exports=wi.default?wi.default:wi;
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20422,7 +20426,7 @@ module.exports = react;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

@@ -5,8 +5,8 @@ function TodoItem(props) {
   return (
     <label className="container">
       {props.text}
-      <input type="checkbox"/>
-      <span className="checkmark"/>
+      <input type="checkbox" checked={props.completed}/>
+      <span className="checkmark" />
     </label>
   )
 }
