@@ -9,16 +9,16 @@ import TodoItem from "./TodoItem";
 import todosData from '../data/todosData';
 
 function App() {
-  const todos = todosData.map(item => <TodoItem key={item.id} {...item}/>);
+  // const todos = todosData.map(item => <TodoItem key={item.id} {...item}/>);
   // TodoList
-  return (
-    <div style={{paddingTop: '46px'}}>
-      <Header/>
-      <div style={{padding: '20px 20px', border: '3px solid #333'}}>
-        {todos}
-      </div>
-    </div>
-  )
+  // return (
+  //   <div style={{paddingTop: '46px'}}>
+  //     <Header/>
+  //     <div style={{padding: '20px 20px', border: '3px solid #333'}}>
+  //       {todos}
+  //     </div>
+  //   </div>
+  // )
 
   // ContactCards
   // return (
