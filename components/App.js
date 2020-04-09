@@ -6,7 +6,7 @@ import TodoItem from "./TodoItem";
 // import jokes from '../data/jokes';
 // import Product from './Product';
 // import products from '../data/vsschoolProducts';
-import todosData from '../data/todosData';
+// import todosData from '../data/todosData';
 
 function App() {
   // const todos = todosData.map(item => <TodoItem key={item.id} {...item}/>);
