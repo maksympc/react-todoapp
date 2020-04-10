@@ -4,7 +4,7 @@ function TodoItem(props) {
 
   return (
     <label className="container">
-      {props.item.text}
+      <p style={props.item.completed ? {textDecoration: 'line-through', color: '#aaa'} : null}>{props.item.text}</p>
       <input
         type="checkbox"
         checked={props.item.completed}
