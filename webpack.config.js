@@ -9,6 +9,7 @@ module.exports = {
           "loader": "babel-loader",
           "options": {
             "presets": [
+              "stage-0",
               "babel-preset-env",
               "babel-preset-react"
             ]

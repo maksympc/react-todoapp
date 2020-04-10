@@ -27,6 +27,7 @@
     "babel-core": "^6.0",
     "babel-loader": "^7.0",
     "babel-preset-env": "*",
-    "babel-preset-react": "*"
+    "babel-preset-react": "*",
+    "babel-preset-stage-0": "*"
   }
 }

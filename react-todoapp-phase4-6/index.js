@@ -15,7 +15,7 @@ class App extends React.Component {
     this.setState(prevState => ({
       todos: prevState.todos.map(item => {
         if (item.id === id) {
-          item.completed = !item.completed;
+          return {...item, completed: !item.completed};
         }
         return item
       })
@@ -26,7 +26,7 @@ class App extends React.Component {
     const todoItems = this.state.todos.map((item) => <TodoItem key={item.id} item={item}
                                                                handleChange={this.handleChange}/>);
     return (
-      <div>
+      <div style={{padding: '30px'}}>
         {todoItems}
       </div>
     )
