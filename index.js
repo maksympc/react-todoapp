@@ -1,5 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './react-todoapp-phase4-6';
+import App from './conditional-render-practice';
 
 ReactDOM.render(<App/>, document.getElementById('root'));
