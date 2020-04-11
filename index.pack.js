@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -264,9 +264,9 @@ process.umask = function() { return 0; };
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(14);
+  module.exports = __webpack_require__(12);
 } else {
-  module.exports = __webpack_require__(13);
+  module.exports = __webpack_require__(11);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -385,7 +385,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(10);
+  var ReactPropTypesSecret = __webpack_require__(8);
   var loggedTypeFailures = {};
   var has = Function.call.bind(Object.prototype.hasOwnProperty);
 
@@ -486,9 +486,9 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(18);
+  module.exports = __webpack_require__(16);
 } else {
-  module.exports = __webpack_require__(17);
+  module.exports = __webpack_require__(15);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -533,16 +533,15 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(12);
+  module.exports = __webpack_require__(10);
 } else {
-  module.exports = __webpack_require__(11);
+  module.exports = __webpack_require__(9);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 7 */,
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -556,17 +555,16 @@ var _reactDom = __webpack_require__(6);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _react_form_practice = __webpack_require__(20);
+var _container_component_architecture = __webpack_require__(18);
 
-var _react_form_practice2 = _interopRequireDefault(_react_form_practice);
+var _container_component_architecture2 = _interopRequireDefault(_container_component_architecture);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_react_form_practice2.default, null), document.getElementById('root'));
+_reactDom2.default.render(_react2.default.createElement(_container_component_architecture2.default, null), document.getElementById('root'));
 
 /***/ }),
-/* 9 */,
-/* 10 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -585,7 +583,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 11 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -610,7 +608,7 @@ var React = __webpack_require__(1);
 var _assign = __webpack_require__(2);
 var Scheduler = __webpack_require__(4);
 var checkPropTypes = __webpack_require__(3);
-var tracing = __webpack_require__(19);
+var tracing = __webpack_require__(17);
 
 var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED; // Prevent newer renderers from RTE when used with older react package versions.
 // Current owner and dispatcher used to share the same ref,
@@ -25639,7 +25637,7 @@ exports.version = ReactVersion;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 12 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25938,7 +25936,7 @@ exports.unstable_renderSubtreeIntoContainer=function(a,b,c,d){if(!gk(c))throw Er
 
 
 /***/ }),
-/* 13 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27858,7 +27856,7 @@ exports.version = ReactVersion;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 14 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27890,7 +27888,7 @@ exports.useLayoutEffect=function(a,b){return Z().useLayoutEffect(a,b)};exports.u
 
 
 /***/ }),
-/* 15 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28247,7 +28245,7 @@ exports.unstable_wrap = unstable_wrap;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 16 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28264,7 +28262,7 @@ var b=0;exports.__interactionsRef=null;exports.__subscriberRef=null;exports.unst
 
 
 /***/ }),
-/* 17 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29130,7 +29128,7 @@ exports.unstable_wrapCallback = unstable_wrapCallback;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 18 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29158,19 +29156,211 @@ exports.unstable_shouldYield=function(){var a=exports.unstable_now();V(a);var b=
 
 
 /***/ }),
-/* 19 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(16);
+  module.exports = __webpack_require__(14);
 } else {
-  module.exports = __webpack_require__(15);
+  module.exports = __webpack_require__(13);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _FormContainer = __webpack_require__(20);
+
+var _FormContainer2 = _interopRequireDefault(_FormContainer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function App() {
+  return _react2.default.createElement(_FormContainer2.default, null);
+}
+
+exports.default = App;
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function FormComponent(props) {
+  var restrictions = props.data.restrictions && props.data.restrictions.join(', ');
+  return _react2.default.createElement(
+    'main',
+    null,
+    _react2.default.createElement(
+      'form',
+      { onSubmit: props.handleSubmit },
+      _react2.default.createElement('input', {
+        name: 'firstName',
+        value: props.data.firstName,
+        placeholder: 'First Name',
+        onChange: props.handleChange("firstName")
+      }),
+      _react2.default.createElement('br', null),
+      _react2.default.createElement('input', {
+        name: 'lastName',
+        placeholder: 'Last Name',
+        onChange: props.handleChange("lastName")
+      }),
+      _react2.default.createElement('br', null),
+      _react2.default.createElement('input', {
+        type: 'number',
+        name: 'age',
+        min: 0,
+        onChange: props.handleChange("age"),
+        placeholder: 'Age' }),
+      _react2.default.createElement('br', null),
+      _react2.default.createElement(
+        'label',
+        null,
+        'Select gender:',
+        _react2.default.createElement(
+          'label',
+          null,
+          _react2.default.createElement('input', { name: 'gender', value: 'female', type: 'radio', checked: props.data.gender === 'female',
+            onChange: props.handleChange('gender') }),
+          'female'
+        ),
+        _react2.default.createElement(
+          'label',
+          null,
+          _react2.default.createElement('input', { name: 'gender', value: 'male', type: 'radio', checked: props.data.gender === 'male',
+            onChange: props.handleChange('gender') }),
+          'male'
+        )
+      ),
+      _react2.default.createElement('br', null),
+      _react2.default.createElement(
+        'select',
+        { name: 'location', value: props.data.location, onChange: props.handleChange('location') },
+        _react2.default.createElement(
+          'option',
+          { value: 'Kiev' },
+          'Kiev'
+        ),
+        _react2.default.createElement(
+          'option',
+          { value: 'Kharkiv' },
+          'Kharkiv'
+        ),
+        _react2.default.createElement(
+          'option',
+          { value: 'Lviv' },
+          'Lviv'
+        )
+      ),
+      _react2.default.createElement('br', null),
+      _react2.default.createElement(
+        'label',
+        null,
+        'Dietary restrictions:',
+        _react2.default.createElement(
+          'label',
+          null,
+          _react2.default.createElement('input', { name: 'restrictions', type: 'checkbox',
+            checked: props.data.restrictions && props.data.restrictions.includes('vegetarian'),
+            value: 'vegetarian',
+            onChange: props.handleChange('restrictions') }),
+          'Vegetarian'
+        ),
+        _react2.default.createElement(
+          'label',
+          null,
+          _react2.default.createElement('input', { name: 'restrictions', type: 'checkbox',
+            checked: props.data.restrictions && props.data.restrictions.includes('kosher'),
+            value: 'kosher',
+            onChange: props.handleChange('restrictions') }),
+          'Kosher'
+        ),
+        _react2.default.createElement(
+          'label',
+          null,
+          _react2.default.createElement('input', { name: 'restrictions', type: 'checkbox',
+            checked: props.data.restrictions && props.data.restrictions.includes('lactose free'),
+            value: 'lactose free',
+            onChange: props.handleChange('restrictions') }),
+          'Lactose free'
+        )
+      ),
+      _react2.default.createElement('br', null),
+      _react2.default.createElement(
+        'button',
+        null,
+        'Submit'
+      )
+    ),
+    _react2.default.createElement('hr', null),
+    _react2.default.createElement(
+      'h2',
+      null,
+      'Entered information:'
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      'Your name: ',
+      props.data.firstName + ' ' + props.data.lastName
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      'Your age: ',
+      props.data.age
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      'Your gender: ',
+      props.data.gender
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      'Your destination: ',
+      props.data.location
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      'Your dietary restrictions: ',
+      restrictions
+    )
+  );
+}
+
+exports.default = FormComponent;
 
 /***/ }),
 /* 20 */
@@ -29191,6 +29381,10 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _FormComponent = __webpack_require__(19);
+
+var _FormComponent2 = _interopRequireDefault(_FormComponent);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -29201,28 +29395,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-/**
- * Challenge: Wire up the partially-finished travel form so that it works!
- * Remember to use the concept of controlled forms
- * https://reactjs.org/docs/forms.html
- *
- * All information should be populating the text below the form in real-time
- * as you're filling it out
- *
- * This exercise is adapted from the V School curriculum on vanilla JS forms:
- * https://coursework.vschool.io/travel-form/
- *
- * All of our challenges and learning resources are open for the public
- * to play around with and learn from at https://coursework.vschool.io
- */
+var Form = function (_Component) {
+  _inherits(Form, _Component);
 
-var App = function (_Component) {
-  _inherits(App, _Component);
+  function Form(props) {
+    _classCallCheck(this, Form);
 
-  function App(props) {
-    _classCallCheck(this, App);
-
-    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Form.__proto__ || Object.getPrototypeOf(Form)).call(this, props));
 
     _this.state = {
       firstName: '',
@@ -29236,7 +29415,7 @@ var App = function (_Component) {
     return _this;
   }
 
-  _createClass(App, [{
+  _createClass(Form, [{
     key: 'handleChange',
     value: function handleChange(fieldName) {
       var _this2 = this;
@@ -29270,161 +29449,23 @@ var App = function (_Component) {
   }, {
     key: 'handleSubmit',
     value: function handleSubmit() {
-      alert('First name: ' + this.state.firstName + '\n       Last name: ' + this.state.lastName + '\n       Age: ' + this.state.age + ' \n       Gender: ' + this.state.gender + ' \n       Location: ' + this.state.location + ' \n       Dietary restrictions: ' + this.state.restrictions + ' \n    ');
+      alert('      First name: ' + this.state.firstName + '\n       Last name: ' + this.state.lastName + '\n       Age: ' + this.state.age + ' \n       Gender: ' + this.state.gender + ' \n       Location: ' + this.state.location + ' \n       Dietary restrictions: ' + this.state.restrictions);
     }
   }, {
     key: 'render',
     value: function render() {
-      var restrictions = this.state.restrictions && this.state.restrictions.join(', ');
-      return _react2.default.createElement(
-        'main',
-        null,
-        _react2.default.createElement(
-          'form',
-          { onSubmit: this.handleSubmit },
-          _react2.default.createElement('input', {
-            name: 'firstName',
-            value: this.state.firstName,
-            placeholder: 'First Name',
-            onChange: this.handleChange("firstName")
-          }),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement('input', {
-            name: 'lastName',
-            placeholder: 'Last Name',
-            onChange: this.handleChange("lastName")
-          }),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement('input', {
-            type: 'number',
-            name: 'age',
-            min: 0,
-            onChange: this.handleChange("age"),
-            placeholder: 'Age' }),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'label',
-            null,
-            'Select gender:',
-            _react2.default.createElement(
-              'label',
-              null,
-              _react2.default.createElement('input', { name: 'gender', value: 'female', type: 'radio', checked: this.state.gender === 'female',
-                onChange: this.handleChange('gender') }),
-              'female'
-            ),
-            _react2.default.createElement(
-              'label',
-              null,
-              _react2.default.createElement('input', { name: 'gender', value: 'male', type: 'radio', checked: this.state.gender === 'male',
-                onChange: this.handleChange('gender') }),
-              'male'
-            )
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'select',
-            { name: 'location', value: this.state.location, onChange: this.handleChange('location') },
-            _react2.default.createElement(
-              'option',
-              { value: 'Kiev' },
-              'Kiev'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Kharkiv' },
-              'Kharkiv'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Lviv' },
-              'Lviv'
-            )
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'label',
-            null,
-            'Dietary restrictions:',
-            _react2.default.createElement(
-              'label',
-              null,
-              _react2.default.createElement('input', { name: 'restrictions', type: 'checkbox',
-                checked: this.state.restrictions && this.state.restrictions.includes('vegetarian'),
-                value: 'vegetarian',
-                onChange: this.handleChange('restrictions') }),
-              'Vegetarian'
-            ),
-            _react2.default.createElement(
-              'label',
-              null,
-              _react2.default.createElement('input', { name: 'restrictions', type: 'checkbox',
-                checked: this.state.restrictions && this.state.restrictions.includes('kosher'),
-                value: 'kosher',
-                onChange: this.handleChange('restrictions') }),
-              'Kosher'
-            ),
-            _react2.default.createElement(
-              'label',
-              null,
-              _react2.default.createElement('input', { name: 'restrictions', type: 'checkbox',
-                checked: this.state.restrictions && this.state.restrictions.includes('lactose free'),
-                value: 'lactose free',
-                onChange: this.handleChange('restrictions') }),
-              'Lactose free'
-            )
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'button',
-            null,
-            'Submit'
-          )
-        ),
-        _react2.default.createElement('hr', null),
-        _react2.default.createElement(
-          'h2',
-          null,
-          'Entered information:'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Your name: ',
-          this.state.firstName + ' ' + this.state.lastName
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Your age: ',
-          this.state.age
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Your gender: ',
-          this.state.gender
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Your destination: ',
-          this.state.location
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Your dietary restrictions: ',
-          restrictions
-        )
-      );
+      return _react2.default.createElement(_FormComponent2.default, {
+        handleChange: this.handleChange,
+        handleSubmit: this.handleSubmit,
+        data: this.state
+      });
     }
   }]);
 
-  return App;
+  return Form;
 }(_react.Component);
 
-exports.default = App;
+exports.default = Form;
 
 /***/ })
 /******/ ]);
