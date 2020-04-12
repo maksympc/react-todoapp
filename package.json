@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/maksympc/react-todoapp#readme",
   "dependencies": {
+    "randomcolor": "^0.5.4",
     "react": "16.13.0",
     "react-dom": "16.13.0"
   },
